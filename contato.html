@@ -71,7 +71,7 @@
             </ul>
             <form class="d-flex">
               <input class="input-search form-control me-2" type="search" placeholder="" aria-label="Search">
-              <button class="search-button" type="submit"><span class="iconify search-icon" data-icon="ant-design:search-outlined" data-inline="false"></span></button>
+              <button class="search-button" type="submit" onclick="setPalavraPesquisada()"><a href="proucurar.html"><span class="iconify search-icon" data-icon="ant-design:search-outlined" data-inline="false"></span></a></button>
             </form>
 
           </div>
@@ -136,6 +136,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!--My JavaScript-->
+    <script>
+      
+      var palavraPesquisada = "";
+      sessionStorage.setItem("palavraPesquisada", palavraPesquisada); 
+
+      function setPalavraPesquisada()
+      {
+        palavraPesquisada = $('.input-search').val();
+        sessionStorage.setItem("palavraPesquisada", palavraPesquisada); 
+      }
+
+    </script>
     <script src="app.js"></script>
 
 </body>

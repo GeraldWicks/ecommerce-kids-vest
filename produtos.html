@@ -64,13 +64,13 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="">Contato</a>
+                <a class="nav-link" href="contato.html">Contato</a>
               </li>
 
             </ul>
             <form class="d-flex">
               <input class="input-search form-control me-2" type="search" placeholder="" aria-label="Search">
-              <button class="search-button" type="submit"><span class="iconify search-icon" data-icon="ant-design:search-outlined" data-inline="false"></span></button>
+              <button class="search-button" type="submit" onclick="setPalavraPesquisada()"><a href="proucurar.html"><span class="iconify search-icon" data-icon="ant-design:search-outlined" data-inline="false"></span></a></button>
             </form>
 
           </div>
@@ -340,67 +340,6 @@
                     <p class="description total-categoria-23"></p>
                     <p class="price total-price-23"></p>
                   </div>
-
-
-
-
-                  <!--
-
-                  <div class="col col-md-4 product-column">
-                    <a href=""><h3 class="title">Sapato Social</h3></a>
-                    <div class="div-img">
-                      <a href=""><img src="./imagens/produtos/bs16.jpg" alt=""></a>
-                    </div>
-                    <p class="description">Para bebê</p>
-                    <p class="price">R$ 45.99</p>
-                  </div>
-  
-                  <div class="col col-md-4 product-column">
-                    <a href=""><h3 class="title">Sapato escolar</h3></a>
-                    <div class="div-img">
-                      <a href=""><img src="./imagens/produtos/bs17.jpg" alt=""></a>
-                    </div>
-                    <p class="description">Para bebê</p>
-                    <p class="price">R$ 38.99</p>
-                  </div>
-  
-                  <div class="col col-md-4 product-column">
-                    <a href=""><h3 class="title">Sapato Colorido</h3></a>
-                    <div class="div-img">
-                      <a href=""><img src="./imagens/produtos/bs18.jpg" alt=""></a>
-                    </div>
-                    <p class="description">Para bebê</p>
-                    <p class="price">R$ 28.99</p>
-                  </div>
-  
-                  <div class="col col-md-4 product-column">
-                    <a href=""><h3 class="title">Sapato ecolar</h3></a>
-                    <div class="div-img">
-                      <a href=""><img src="./imagens/produtos/cs7.jpg" alt=""></a>
-                    </div>
-                    <p class="description">Para criança</p>
-                    <p class="price">R$ 45.99</p>
-                  </div>
-  
-                  <div class="col col-md-4 product-column">
-                    <a href=""><h3 class="title">Sapato social</h3></a>
-                    <div class="div-img">
-                      <a href=""><img src="./imagens/produtos/cs8.jpg" alt=""></a>
-                    </div>
-                    <p class="description">Para criança</p>
-                    <p class="price">R$ 38.99</p>
-                  </div>
-  
-                  <div class="col col-md-4 product-column">
-                    <a href=""><h3 class="title">Sapato esportivo</h3></a>
-                    <div class="div-img">
-                      <a href=""><img src="./imagens/produtos/cs9.jpg" alt=""></a>
-                    </div>
-                    <p class="description">Para criança</p>
-                    <p class="price">R$ 38.99</p>
-                  </div>
-
-                  -->
                   
                 </div>
 
@@ -735,7 +674,23 @@
     <!--Add Query-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <script>
+      var categoriaProdutos = sessionStorage.getItem("categoriaProdutos");
+    </script>
+
     <!--My JavaScript-->
+    <script>
+      
+      var palavraPesquisada = "";
+      sessionStorage.setItem("palavraPesquisada", palavraPesquisada); 
+
+      function setPalavraPesquisada()
+      {
+        palavraPesquisada = $('.input-search').val();
+        sessionStorage.setItem("palavraPesquisada", palavraPesquisada); 
+      }
+
+    </script>
     <script src="data.js"></script>
     <script src="app.js"></script>
 

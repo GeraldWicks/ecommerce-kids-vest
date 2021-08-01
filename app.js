@@ -1,5 +1,9 @@
 //FILTRO DE CATEGORIAS
-filterSelection("Todos-Produtos")
+// Todos-Produtos
+// Bebês
+// Crianças
+
+filterSelection(categoriaProdutos)
 function filterSelection(c) {
   $("#produtos-title").html(c);
   var x, i;
@@ -291,4 +295,52 @@ function enviarMensagem()
   const link = 'https://api.whatsapp.com/send?phone=5571996344481&text=Ol%C3%A1%2C%20me%20chamo%20' + name + '%20' + newText;
 
   window.open(link, '_blank');
+}
+
+// palavraPesquisada
+
+proucurarProduto(palavraPesquisada);
+
+function proucurarProduto(palavra)
+{
+  const length = produtoArr.length;
+  var countPesquisados = 0;
+
+  $('.pesquisados-title').html('Resultados de : ' + palavra);
+
+  for (var i = 0; i < 12; i++)
+  {
+    $('.proucurar-' + i).hide();
+  }
+
+  for (var i = 0; i < length; i++)
+  {
+    var fullWord = produtoArr[i]['name'];
+    var one_word = fullWord.split(" ");
+
+    if (palavra.toLowerCase() === one_word[0].toLowerCase() || palavra.toLowerCase() === one_word[1].toLowerCase())
+    {
+      const name = produtoArr[i]['name'];
+      const url = produtoArr[i]['url'];
+      const img = produtoArr[i]['img'];
+      const categoria = produtoArr[i]['categoria'];
+      const preco = produtoArr[i]['preco'];
+
+      $('.proucurar-' + countPesquisados).show();
+      $('.proucurar-title-' + countPesquisados).html(name);
+      $('.proucurar-url-' + countPesquisados).attr('href', url);
+      $('.proucurar-img-' + countPesquisados).attr('src', img);
+      $('.proucurar-categoria-' + countPesquisados).html(categoria);
+      $('.proucurar-price-' + countPesquisados).html(preco);
+
+      countPesquisados++;     
+    }
+
+  }
+
+  if (countPesquisados === 0)
+  {
+    $('.pesquisados-title').html('Palavra não encontrada :(');
+  }
+
 }

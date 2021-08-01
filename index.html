@@ -70,7 +70,7 @@
             </ul>
             <form class="d-flex">
               <input class="input-search form-control me-2" type="search" placeholder="" aria-label="Search">
-              <button class="search-button" type="submit"><span class="iconify search-icon" data-icon="ant-design:search-outlined" data-inline="false"></span></button>
+              <button class="search-button" type="submit" onclick="setPalavraPesquisada()"><a href="proucurar.html"><span class="iconify search-icon" data-icon="ant-design:search-outlined" data-inline="false"></span></a></button>
             </form>
 
           </div>
@@ -94,8 +94,8 @@
                     <h1 class="title">Kids Vest</h1>
                     <h5 class="description">Roupas para seu bebê ou criança</h5>
                     <div class="div-buttons">
-                      <a href=""><button class="button-white">ROUPAS DE CRIANÇA</button></a>
-                      <a href=""><button class="button-blue">ROUPAS DE BEBÊ</button></a>   
+                      <a href="produtos.html"><button class="button-white" onclick="setCategoriaProdutos('Crianças')">ROUPAS DE CRIANÇA</button></a>
+                      <a href="produtos.html"><button class="button-blue" onclick="setCategoriaProdutos('Bebês')">ROUPAS DE BEBÊ</button></a>   
                     </div>
                 </div>
 
@@ -115,7 +115,7 @@
                   <h1 class="title">Kids Vest</h1>
                   <h5 class="description">Roupas para todos os públicos</h5>
                   <div class="div-buttons">
-                    <a href=""><button class="button-white">ROUPAS DE CRIANÇA</button></a> 
+                    <a href="produtos.html"><button class="button-white" onclick="setCategoriaProdutos('Crianças')">ROUPAS DE CRIANÇA</button></a> 
                   </div>
               </div>
 
@@ -135,7 +135,7 @@
                   <h1 class="title">Kids Vest</h1>
                   <h5 class="description">Roupas para todas as idades</h5>
                   <div class="div-buttons">
-                    <a href=""><button class="button-blue">ROUPAS DE BEBÊ</button></a>   
+                    <a href="produtos.html"><button class="button-blue" onclick="setCategoriaProdutos('Bebês')">ROUPAS DE BEBÊ</button></a>   
                   </div>
               </div>
 
@@ -155,8 +155,7 @@
                   <h1 class="title">Kids Vest</h1>
                   <h5 class="description">Roupas para todos os gêneros</h5>
                   <div class="div-buttons">
-                    <a href=""><button class="button-white">ROUPAS DE CRIANÇA</button></a>
-                    <a href=""><button class="button-blue">ROUPAS DE BEBÊ</button></a>   
+                    <a href="produtos.html"><button class="button-white">CONHECER PRODUTOS</button></a> 
                   </div>
               </div>
 
@@ -330,6 +329,29 @@
 
     <!--Add Query-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      var categoriaProdutos = "Todos-Produtos";
+      sessionStorage.setItem("categoriaProdutos", categoriaProdutos); 
+
+      function setCategoriaProdutos(categoria)
+      {
+        categoriaProdutos = categoria;
+        sessionStorage.setItem("categoriaProdutos", categoriaProdutos); 
+        //window.open('produtos.html', '');
+      }
+
+      var palavraPesquisada = "";
+      sessionStorage.setItem("palavraPesquisada", palavraPesquisada); 
+
+      function setPalavraPesquisada()
+      {
+        palavraPesquisada = $('.input-search').val();
+        sessionStorage.setItem("palavraPesquisada", palavraPesquisada); 
+      }
+
+           
+    </script>
 
     <!--My JavaScript-->
     <script src="app.js"></script>
